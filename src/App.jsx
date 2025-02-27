@@ -7,7 +7,13 @@ function App() {
   const [playerList, setPlayerList] = useState([]);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+    <div
+      className="min-h-screen bg-gray-100 flex flex-col items-center p-6"
+      style={{
+        backgroundImage:
+          "url('https://static.vecteezy.com/system/resources/previews/012/700/238/non_2x/lucky-dice-banner-with-6x6-vector.jpg')",
+      }}
+    >
       <h1 className="text-3xl font-extrabold text-gray-800 mb-12 text-center uppercase tracking-wide drop-shadow-lg">
         🎲 Random Team Generator 🔥
       </h1>
