@@ -9,11 +9,9 @@ function RandomPick(props) {
     const shuffledArray = shuffle(props.list);
     if (!noOfPlayers || noOfPlayers <= 0) {
       setRandomPeople([]);
-      props.onSelectedPlayersChange([]); // Clear selected players if invalid input
     } else {
       const slicedArray = shuffledArray.slice(0, noOfPlayers);
       setRandomPeople(slicedArray);
-      props.onSelectedPlayersChange(slicedArray); // Send selected players to parent
     }
   };
 
@@ -33,7 +31,7 @@ function RandomPick(props) {
       />
 
       <button
-        className="bg-green-500 cursor-pointer text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition"
+        className="bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition"
         onClick={handlePickClick}
       >
         Pick
