@@ -51,7 +51,7 @@ function RandomTeam(props) {
                 <h4 className="font-semibold text-blue-600">
                   Team {teamIndex + 1}
                 </h4>
-                <ul className="list-disc pl-5 text-gray-700">
+                <ul className="list-decimal pl-5 text-gray-700">
                   {team.map((member, memberIndex) => (
                     <li key={memberIndex} className="py-1">
                       {member}
