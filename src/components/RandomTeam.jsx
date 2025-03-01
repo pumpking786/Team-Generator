@@ -11,10 +11,16 @@ function RandomTeam(props) {
       setTeams([]);
     } else {
       const noOfPlayers = Math.floor(shuffledArray.length / noOfTeam);
+      const remainingPlayers = shuffledArray.length % noOfTeam;
       const res = [];
+
+      let currentIndex = 0;
       for (let i = 0; i < noOfTeam; i++) {
-        res.push(shuffledArray.slice(i * noOfPlayers, (i + 1) * noOfPlayers));
+        const teamSize = noOfPlayers + (i < remainingPlayers ? 1 : 0);
+        res.push(shuffledArray.slice(currentIndex, currentIndex + teamSize));
+        currentIndex += teamSize;
       }
+
       setTeams(res);
     }
   };
@@ -33,7 +39,7 @@ function RandomTeam(props) {
       />
 
       <button
-        className="bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition"
+        className="bg-green-500 text-white cursor-pointer font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-green-600 transition"
         onClick={handleGeneratorClick}
       >
         Generate
